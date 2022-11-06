@@ -8,7 +8,7 @@ metadata:
 spec:
   description: Monitoring applications
   sourceRepos:
-  - 'https://github.com/BigKAA/youtube'
+  - 'https://github.com/petrovkazanksvu/krukov'
   destinations:
   - server: https://kubernetes.default.svc
     namespace: 'monitoring'
