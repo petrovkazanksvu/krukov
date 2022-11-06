@@ -5,7 +5,7 @@ victoria-metrics-single:
   serviceAccount:
     create: false
   server:
-    priorityClassName: "low-priority"
+    #priorityClassName: "low-priority"
     retentionPeriod: 6h
     extraArgs:
       selfScrapeInterval: "15s"
