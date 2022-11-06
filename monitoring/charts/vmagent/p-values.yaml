@@ -63,7 +63,9 @@ podDisruptionBudget:
   labels: {}
 
 # WARN: need to specify at least one remote write url or one multi tenant url
-remoteWriteUrls: []
+# remoteWriteUrls: []
+remoteWriteUrls: 
+    - http://victoriametrics-victoria-metrics-single-server
 # remoteWriteUrls:
 #   - http://vm-insert:8480/insert/0/prometheus
 #   - http://prometheus:8480/insert/0/prometheus
