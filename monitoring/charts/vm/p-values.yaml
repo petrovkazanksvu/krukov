@@ -3,9 +3,9 @@
 # Declare variables to be passed into your templates.
 
 rbac:
-  create: true
+  create: false
   # Note: The PSP will only be deployed, if Kubernetes (<1.25) supports the resource.
-  pspEnabled: true
+  pspEnabled: false
   namespaced: false
   extraLabels: {}
   # annotations: {}
@@ -15,7 +15,7 @@ printNotes: true
 
 serviceAccount:
   # -- Create service account.
-  create: true
+  create: false
   # name:
   extraLabels: {}
   # annotations: {}
@@ -261,9 +261,8 @@ server:
       # -- keep last N monthly backups. 0 means delete all existing monthly backups. Specify -1 to turn off
       keepLastMonthly: 2
     extraArgs:
-      envflag.enable: "true"
-      envflag.prefix: VM_
-      loggerFormat: json
+      selfScrapeInterval: "15s"
+      loggerLevel: "INFO"
     resources: {}
     # -- Additional environment variables (ex.: secret tokens, flags) https://github.com/VictoriaMetrics/VictoriaMetrics#environment-variables
     env: []
@@ -298,7 +297,7 @@ server:
     # -- Service port
     servicePort: 8428
     # -- Node port
-    # nodePort: 31104
+    nodePort: 30008
     # -- Service type
     type: NodePort
     # Ref: https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip
@@ -309,7 +308,7 @@ server:
     # -- Creates statefulset instead of deployment, useful when you want to keep the cache
     enabled: true
     # -- Deploy order policy for StatefulSet pods
-    podManagementPolicy: OrderedReady
+    podManagementPolicy: Parallel
     # Headless service for statefulset
     service:
       # -- Headless service annotations
