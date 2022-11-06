@@ -11,7 +11,7 @@ victoria-metrics-single:
       selfScrapeInterval: "15s"
       loggerLevel: "INFO"
     persistentVolume:
-      storageClass: "managed-nfs-storage"
+      storageClass: "csi-s3"
       size: "10Gi"
     resources:
       requests:
