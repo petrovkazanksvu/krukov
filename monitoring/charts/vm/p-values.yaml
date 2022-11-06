@@ -298,7 +298,7 @@ server:
     # -- Service port
     servicePort: 8428
     # -- Node port
-    nodePort: 30000
+    # nodePort: 31104
     # -- Service type
     type: NodePort
     # Ref: https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip
